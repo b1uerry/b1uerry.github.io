@@ -106,9 +106,9 @@ giscus:
   repo: b1uerry/b1uerry.github.io
   repo_id: R_kgDOJO0zrA
   category: Announcements
-  category_id: "" # TODO: 形如 DIC_kwDOJO0zrM4C...
+  category_id: DIC_kwDOJO0zrM4DLHao
   mapping: pathname
-  input_position: top
+  input_position: bottom
   lang: zh-CN
   theme_light: light
   theme_dark: dark
