@@ -1,0 +1,83 @@
+# NexT 主题配置（覆盖 node_modules/hexo-theme-next/_config.yml 中的默认值）
+# 完整选项见: https://theme-next.js.org/docs/theme-settings/
+
+# Schemes: Muse | Mist | Pisces | Gemini
+scheme: Gemini
+
+darkmode: false
+
+menu:
+  home: / || fa fa-home
+  about: /about/ || fa fa-user
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
+
+menu_settings:
+  icons: true
+  badges: false
+
+sidebar:
+  position: left
+  display: post
+  padding: 18
+  offset: 12
+
+# 文章目录（标题里已自带编号，这里关闭自动编号，避免出现 "1.1 1.1"）
+toc:
+  enable: true
+  number: false
+  wrap: false
+  expand_all: false
+  max_depth: 6
+
+post_meta:
+  created_at: true
+  updated_at:
+    enable: true
+    another_day: true
+  categories: true
+
+# 图片点击放大
+fancybox: true
+
+codeblock:
+  copy_button:
+    enable: true
+
+# 数学公式（MathJax）
+math:
+  every_page: true
+  mathjax:
+    enable: true
+    tags: ams
+    display_overflow: scroll
+
+# 本地搜索（依赖 hexo-generator-searchdb）
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: 1
+  unescape: false
+  preload: false
+
+# 第三方静态资源全部自托管（不依赖 cdnjs / jsDelivr，国内访问更稳）
+vendors:
+  internal: local
+  plugins: local
+
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
+post_navigation: true
+
+footer:
+  since: 2023
+  icon:
+    name: fa fa-heart
+    animated: false
+    color: "#ff6b6b"
+  copyright: b1uerry
+  powered: true

@@ -1,0 +1,37 @@
+{
+  "name": "b1uerry-blog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hexo source for https://b1uerry.github.io",
+  "scripts": {
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "server": "hexo server",
+    "deploy": "hexo deploy"
+  },
+  "hexo": {
+    "version": "8.1.2"
+  },
+  "dependencies": {
+    "@next-theme/plugins": "^8.29.1",
+    "hexo": "^8.1.2",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-feed": "^4.0.0",
+    "hexo-generator-index": "^4.0.0",
+    "hexo-generator-searchdb": "^1.5.0",
+    "hexo-generator-sitemap": "^3.0.1",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-renderer-marked": "^7.0.1",
+    "hexo-renderer-stylus": "^3.0.1",
+    "hexo-theme-next": "^8.29.1"
+  },
+  "allowScripts": {
+    "hexo-util@3.3.0": true,
+    "hexo-util@2.7.0": true,
+    "hexo-util@4.0.0": true
+  },
+  "devDependencies": {
+    "hexo-server": "^3.0.0"
+  }
+}
