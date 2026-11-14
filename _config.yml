@@ -8,7 +8,9 @@ description: 'I SEE YOU!'
 keywords:
 author: b1uerry
 language: zh-CN
-timezone: 'Asia/Shanghai'
+# 不要设置 timezone：GitHub Actions 运行在 UTC，设置时区会让文章日期在不同机器上
+# 被换算成不同的一天，导致 permalink 变化。留空即按「日期字符串原样」使用。
+timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
