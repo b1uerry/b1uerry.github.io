@@ -209,7 +209,45 @@ A：`_config.next.yml` 顶部 `scheme` 可选 `Muse` / `Mist` / `Pisces` / `Gemi
 
 ---
 
-## 9. 备份与恢复
+## 9. 评论 / 深色模式 / 访问统计
+
+### 评论（Giscus）
+
+- 文章底部自动出现评论区，评论存在本仓库的 **Discussions** 里（分类 `Announcements`）
+- 配置在 `_config.next.yml` 的 `giscus:` 段
+- 某篇文章不想开评论：在 front-matter 里加 `comments: false`
+- 前置依赖（已完成）：仓库开启 Discussions + 安装 <https://github.com/apps/giscus>
+- 想换评论分类：到 <https://giscus.app> 重新生成配置，替换 `category` / `category_id`
+
+### 深色模式
+
+- 左下角 🌙/☀️ 按钮手动切换，选择记录在浏览器 `localStorage`
+- 首次访问时跟随操作系统设置
+- 实现方式：
+  - `scripts/darkmode.js`：构建时把 `@media (prefers-color-scheme: dark)` 转成 `html[data-theme="dark"]`
+  - `source/_data/head.njk`：渲染前设置 `data-theme`，避免闪白
+  - `source/_data/body-end.njk`：切换按钮
+  - `source/_data/styles.styl`：按钮样式
+
+### 访问统计
+
+在 `_config.next.yml` 里二选一填好即可（当前留空 = 不启用）：
+
+```yaml
+# GA4
+google_analytics:
+  tracking_id: G-XXXXXXXXXX
+
+# 或 Umami
+umami:
+  enable: true
+  script_url: https://umami.example.com/script.js
+  website_id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+```
+
+---
+
+## 10. 备份与恢复
 
 - **源码**：GitHub 仓库 `b1uerry/b1uerry.github.io`（`main` 分支）
 - 之前的静态站产物备份在本地 `d:\Astudy\blog\_old-site-backup`（确认无误后可删）
