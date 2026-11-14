@@ -1,0 +1,48 @@
+{# 文章底部评论区（Giscus） #}
+{% if theme.giscus and theme.giscus.enable and theme.giscus.category_id and page.layout == 'post' and page.comments !== false %}
+<div class="post-comments" id="post-comments">
+  <h2 class="comments-title">评论</h2>
+  <div class="giscus"></div>
+</div>
+<script>
+  (function () {
+    var THEME_LIGHT = '{{ theme.giscus.theme_light or "light" }}';
+    var THEME_DARK = '{{ theme.giscus.theme_dark or "dark" }}';
+
+    function currentTheme() {
+      return document.documentElement.getAttribute('data-theme') === 'dark'
+        ? THEME_DARK
+        : THEME_LIGHT;
+    }
+
+    var script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.setAttribute('data-repo', '{{ theme.giscus.repo }}');
+    script.setAttribute('data-repo-id', '{{ theme.giscus.repo_id }}');
+    script.setAttribute('data-category', '{{ theme.giscus.category }}');
+    script.setAttribute('data-category-id', '{{ theme.giscus.category_id }}');
+    script.setAttribute('data-mapping', '{{ theme.giscus.mapping or "pathname" }}');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', '{{ theme.giscus.input_position or "top" }}');
+    script.setAttribute('data-theme', currentTheme());
+    script.setAttribute('data-lang', '{{ theme.giscus.lang or "zh-CN" }}');
+    script.setAttribute('data-loading', 'lazy');
+    document.querySelector('.giscus').appendChild(script);
+
+    // 深浅色切换时同步 giscus 主题
+    function syncGiscus() {
+      var iframe = document.querySelector('iframe.giscus-frame');
+      if (!iframe) return;
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: currentTheme() } } },
+        'https://giscus.app'
+      );
+    }
+    window.addEventListener('themechange', syncGiscus);
+  })();
+</script>
+{% endif %}

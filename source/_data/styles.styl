@@ -1,0 +1,50 @@
+// 深色模式切换按钮
+.theme-toggle {
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--btn-default-border-color);
+  background: var(--btn-default-bg);
+  color: var(--btn-default-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+  background: var(--btn-default-hover-bg);
+  color: var(--btn-default-hover-color);
+  border-color: var(--btn-default-hover-border-color);
+  outline: none;
+}
+
+@media (max-width: 767px) {
+  .theme-toggle {
+    left: 16px;
+    bottom: 16px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+// 评论区
+.post-comments {
+  margin-top: 40px;
+}
+
+.post-comments .comments-title {
+  font-size: 1.2em;
+  font-weight: normal;
+  border-bottom: 1px solid var(--content-bg-color);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}

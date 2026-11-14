@@ -4,7 +4,8 @@
 # Schemes: Muse | Mist | Pisces | Gemini
 scheme: Gemini
 
-darkmode: false
+# 深色模式：生成深色配色（通过 data-theme 手动切换，见 source/_data/ 下的自定义文件）
+darkmode: true
 
 menu:
   home: / || fa fa-home
@@ -81,3 +82,51 @@ footer:
     color: "#ff6b6b"
   copyright: b1uerry
   powered: true
+
+# ---------------------------------------------------------------
+# 自定义文件（NexT Custom Files）
+# ---------------------------------------------------------------
+custom_file_path:
+  head: source/_data/head.njk
+  bodyEnd: source/_data/body-end.njk
+  postBodyEnd: source/_data/post-body-end.njk
+  style: source/_data/styles.styl
+
+# ---------------------------------------------------------------
+# 评论：Giscus
+# https://giscus.app
+# 前置条件：
+#   1. 仓库 Settings → General → Features 勾选 Discussions
+#   2. 安装 giscus App: https://github.com/apps/giscus
+#   3. 打开 https://giscus.app，填入仓库，选择 Discussions 分类，
+#      把生成的 data-category-id 粘贴到下面 category_id
+# ---------------------------------------------------------------
+giscus:
+  enable: true
+  repo: b1uerry/b1uerry.github.io
+  repo_id: R_kgDOJO0zrA
+  category: Announcements
+  category_id: "" # TODO: 形如 DIC_kwDOJO0zrM4C...
+  mapping: pathname
+  input_position: top
+  lang: zh-CN
+  theme_light: light
+  theme_dark: dark
+
+# ---------------------------------------------------------------
+# 访问统计（填了 ID 才生效，可只选一个）
+# ---------------------------------------------------------------
+
+# Google Analytics 4
+# 到 https://analytics.google.com 创建媒体资源，拿到 G-XXXXXXX
+google_analytics:
+  tracking_id: "" # 例如 G-XXXXXXXXXX
+  only_pageview: false
+
+# Umami（自建或 Umami Cloud）
+# 自建：script_url 填 https://你的域名/script.js，website_id 在后台 Website Settings 里
+umami:
+  enable: false
+  script_url: "" # https://umami.example.com/script.js
+  website_id: "" # xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+  host_url: ""
